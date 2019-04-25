@@ -1,5 +1,4 @@
 resource "aws_instance" "Zinet" {
-  source = "github.com/linuxizate/curso-terraform-2019/tree/master/instacia_web"
   ami           = "${data.aws_ami.ubuntu.image_id}"
   instance_type = "t3.micro"
   vpc_security_group_ids = ["${aws_security_group.allow_ssh.id}", "${aws_security_group.allow_http.id}"]
